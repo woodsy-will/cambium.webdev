@@ -1,0 +1,53 @@
+/* 1. Define the Forestry Color Palette */
+:root {
+    --pico-primary: #2e7d32;
+    /* Forest Green */
+    --pico-primary-background: #1b5e20;
+    --pico-primary-underline: #388e3c;
+    --pico-primary-hover: #1b5e20;
+    --pico-primary-focus: rgba(46, 125, 50, 0.5);
+    --pico-primary-inverse: #ffffff;
+}
+
+/* 2. Hero Section Styling */
+/* This makes the top section look distinct */
+#hero {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--pico-muted-border-color);
+    margin-bottom: 3rem;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--pico-primary);
+}
+
+/* 3. Card Styling (The Service Boxes) */
+article {
+    border-top: 5px solid var(--pico-primary);
+    /* Adds a green top border to cards */
+}
+
+/* Profile Circle Styling */
+.profile-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--pico-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* 4. Footer Tweaks */
+footer {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--pico-muted-border-color);
+}
