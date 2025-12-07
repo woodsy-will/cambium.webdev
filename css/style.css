@@ -1,18 +1,21 @@
 /* 1. Define the Forestry Color Palette */
 :root {
-    --pico-primary: #2e7d32;
-    /* Forest Green */
-    --pico-primary-background: #1b5e20;
+    --pico-primary: #2e7d32; /* Forest Green */
+    --pico-primary-background: #2e7d32; /* Usually matches primary */
     --pico-primary-underline: #388e3c;
-    --pico-primary-hover: #1b5e20;
+    
+    /* Make hover slightly darker */
+    --pico-primary-hover: #1b5e20; 
+    
+    /* Focus ring with transparency */
     --pico-primary-focus: rgba(46, 125, 50, 0.5);
     --pico-primary-inverse: #ffffff;
 }
 
 /* 2. Hero Section Styling */
-/* This makes the top section look distinct */
 #hero {
-    padding: 3rem 0;
+    /* vh units help it scale better on different screen heights */
+    padding: 8vh 0; 
     border-bottom: 1px solid var(--pico-muted-border-color);
     margin-bottom: 3rem;
 }
@@ -21,12 +24,21 @@
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: var(--pico-primary);
+    /* Tighter line height for large text looks better */
+    line-height: 1.2; 
 }
 
-/* 3. Card Styling (The Service Boxes) */
-article {
+/* 3. Card Styling */
+/* Added a class assumption (.card) so it doesn't affect blog posts unintentionally */
+article.card {
     border-top: 5px solid var(--pico-primary);
-    /* Adds a green top border to cards */
+    /* smooth transition if you add hover effects later */
+    transition: transform 0.2s ease-in-out; 
+}
+
+/* Optional: Slight lift on hover for interactivity */
+article.card:hover {
+    transform: translateY(-5px);
 }
 
 /* Profile Circle Styling */
@@ -34,7 +46,7 @@ article {
     width: 60px;
     height: 60px;
     background-color: var(--pico-primary);
-    color: white;
+    color: var(--pico-primary-inverse); /* Ensures text contrast matches theme */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -42,12 +54,17 @@ article {
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 1rem;
+    
+    /* Prevents the circle from squishing if inside a flex container */
+    flex-shrink: 0; 
 }
 
 /* 4. Footer Tweaks */
 footer {
     text-align: center;
     padding-top: 2rem;
+    padding-bottom: 2rem; /* Added bottom padding for mobile scroll clearance */
     margin-top: 4rem;
     border-top: 1px solid var(--pico-muted-border-color);
+    color: var(--pico-muted-color); /* Makes footer text slightly softer */
 }
