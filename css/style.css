@@ -1,52 +1,40 @@
-/* 1. Define the Forestry Color Palette */
+/* Custom styles for Cambium Arbor */
+
 :root {
-    --pico-primary: #2e7d32; /* Forest Green */
-    --pico-primary-background: #2e7d32; /* Usually matches primary */
-    --pico-primary-underline: #388e3c;
-    
-    /* Make hover slightly darker */
-    --pico-primary-hover: #1b5e20; 
-    
-    /* Focus ring with transparency */
-    --pico-primary-focus: rgba(46, 125, 50, 0.5);
-    --pico-primary-inverse: #ffffff;
+    --pico-font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    --pico-border-radius: 0.5rem;
 }
 
-/* 2. Hero Section Styling */
+/* Custom Header Image / Hero Background */
 #hero {
-    /* vh units help it scale better on different screen heights */
-    padding: 8vh 0; 
-    border-bottom: 1px solid var(--pico-muted-border-color);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/drone-shot.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6rem 1rem;
+    text-align: center;
+    border-radius: var(--pico-border-radius);
     margin-bottom: 3rem;
 }
 
 #hero h1 {
     font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--pico-primary);
-    /* Tighter line height for large text looks better */
-    line-height: 1.2; 
+    font-weight: 800;
+    margin-bottom: 1rem;
 }
 
-/* 3. Card Styling */
-/* Added a class assumption (.card) so it doesn't affect blog posts unintentionally */
-article.card {
-    border-top: 5px solid var(--pico-primary);
-    /* smooth transition if you add hover effects later */
-    transition: transform 0.2s ease-in-out; 
+#hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
 }
 
-/* Optional: Slight lift on hover for interactivity */
-article.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Profile Circle Styling */
+/* Profile Icons for Team Section */
 .profile-icon {
     width: 60px;
     height: 60px;
-    background-color: var(--pico-primary);
-    color: var(--pico-primary-inverse); /* Ensures text contrast matches theme */
+    background-color: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -54,17 +42,21 @@ article.card:hover {
     font-weight: bold;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    
-    /* Prevents the circle from squishing if inside a flex container */
-    flex-shrink: 0; 
 }
 
-/* 4. Footer Tweaks */
+/* Footer spacing */
 footer {
+    margin-top: 3rem;
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 2rem; /* Added bottom padding for mobile scroll clearance */
-    margin-top: 4rem;
-    border-top: 1px solid var(--pico-muted-border-color);
-    color: var(--pico-muted-color); /* Makes footer text slightly softer */
+    opacity: 0.7;
+}
+
+/* Map Styling */
+#map {
+    height: 350px;
+    width: 100%;
+    border-radius: var(--pico-border-radius);
+    margin-top: 1rem;
+    border: 1px solid var(--pico-muted-border-color);
+    z-index: 1; /* Ensure it sits nicely in the layout */
 }
