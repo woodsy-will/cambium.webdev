@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title | default("Cambium Arbor") }}</title>
+    <!-- 1. Pico.css Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+
+    <!-- 2. Leaflet.js (Map) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- 3. Your Custom Forestry Styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    {% if page_css %}
+    <link rel="stylesheet" href="{{ page_css }}">
+    {% endif %}
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <header class="container">
+        <nav>
+            <ul>
+                <li><strong>🌲 Cambium Arbor</strong></li>
+            </ul>
+            <ul>
+                <li><a href="/#services">Services</a></li>
+                <li><a href="/fire-insurance/"><strong>Fire Insurance</strong></a></li>
+                <li><a href="/#gallery">Portfolio</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/news/">News</a></li>
+                <li><a href="/#contact" role="button">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+        {{ content | safe }}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <small>
+            &copy; <span id="year"></span> Cambium Arbor. All rights reserved.
+        </small>
+    </footer>
+    <script src="/js/main.js"></script>
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+</body>
+
+</html>

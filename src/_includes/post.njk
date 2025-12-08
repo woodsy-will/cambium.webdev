@@ -1,0 +1,20 @@
+---
+layout: base.njk
+---
+<section class="container">
+    <header style="margin-bottom: 2rem;">
+        <h1>{{ title }}</h1>
+        <p><small>Published on <time datetime="{{ date | date('Y-m-d') }}">{{ date | date("MMMM d, y") }}</time></small></p>
+        {% if thumbnail %}
+        <img src="{{ thumbnail }}" alt="{{ title }}" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: var(--pico-border-radius);">
+        {% endif %}
+    </header>
+
+    <article>
+        {{ content | safe }}
+    </article>
+
+    <footer style="margin-top: 3rem;">
+        <a href="/news/" role="button" class="outline">← Back to News</a>
+    </footer>
+</section>

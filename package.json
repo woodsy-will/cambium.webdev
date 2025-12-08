@@ -1,0 +1,25 @@
+{
+  "name": "my-company-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodsy-will/my-company-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woodsy-will/my-company-site/issues"
+  },
+  "homepage": "https://github.com/woodsy-will/my-company-site#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  }
+}
